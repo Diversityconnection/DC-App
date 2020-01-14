@@ -17,6 +17,17 @@
                     <div class="col-md-4">
                         <label class="sr-only" for="search-where">Where</label>
                         <input type="text" class="form-control" id="search-where" placeholder="Where?">
+                        <script type="text/javascript">
+                            $('input#search-where').autoComplete({
+                                noResultsText: "No cities found.",
+                                resolverSettings: {
+                                    url: 'api/city'
+                                },
+                                formatResult: function (item) {
+                                    return item.title;
+                                }
+                            });
+                        </script>
                     </div>
                     <div class="col-md-4">
                         <label class="sr-only" for="search-when">Where</label>
