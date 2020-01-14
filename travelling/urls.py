@@ -14,7 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 
 from client import views as client_views
 from search import views as search_views
@@ -22,8 +23,15 @@ from tour import views as tour_views
 from guide import views as guide_views
 from dashboard import views as dashboard_views
 
+from place.viewsets import CityViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'city', CityViewSet)
+
 urlpatterns = [
     path('', search_views.search, name='search'),
+    path('api/', include(router.urls)),
     path('tours/', tour_views.search, name='tour-search'),
     path('guides/', guide_views.search, name='guide-search'),
     path('guides/<int:id>/', guide_views.guide_detail, name='guide-item'),

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Dependencies
     'bootstrap4',
     'cuser',
+    'rest_framework',
 
     # Custom apps
     'place',
