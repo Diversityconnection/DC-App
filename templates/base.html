@@ -29,18 +29,18 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                {% url 'tour-search' as tours_url %}
-                {% url 'guide-search' as guides_url %}
+                {% url 'tours' as tours_url %}
+{#                {% url 'tour-' as guides_url %}#}
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == tours_url %}active{% endif %}" href="{{ tours_url }}">
                         Tours
                     </a>
                 </li>
-                <li class="nav-item {% if request.path == guides_url %}active{% endif %}">
-                    <a class="nav-link" href="{{ guides_url }}">
-                        Guides
-                    </a>
-                </li>
+{#                <li class="nav-item {% if request.path == guides_url %}active{% endif %}">#}
+{#                    <a class="nav-link" href="{{ guides_url }}">#}
+{#                        Guides#}
+{#                    </a>#}
+{#                </li>#}
                 <li class="nav-item"><a class="nav-link">|</a></li>
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">

@@ -32,9 +32,9 @@ router.register(r'city', CityViewSet)
 urlpatterns = [
     path('', search_views.search, name='search'),
     path('api/', include(router.urls)),
-    path('tours/', tour_views.search, name='tour-search'),
-    path('guides/', guide_views.search, name='guide-search'),
-    path('guides/<int:id>/', guide_views.guide_detail, name='guide-item'),
+    path('tours-xxx/', tour_views.search, name='tour-xxx-search'),
+    path('tours/', guide_views.search, name='tours'),
+    path('tours/<int:id>/', guide_views.guide_detail, name='tour'),
     path('login/', client_views.login, name='login'),
     path('registration/', client_views.registration, name='registration'),
     path('logout', client_views.logout, name='logout'),

@@ -2,37 +2,45 @@
 {% load bootstrap4 %}
 {% block title %}Guide tours{% endblock %}
 {% block content %}
-    <div class="row">
-        <div class="col-md-2">
-            <form action="{% url 'guide-search' %}" method="post" class="form">
-                {% csrf_token %}
-                {% bootstrap_form form %}
-                {% buttons %}
-                    <button type="submit" class="btn btn-primary">Filter</button>
-                {% endbuttons %}
-            </form>
-        </div>
-        <div class="col-md-10">
-            {% for item in items %}
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="https://rccl-h.assetsadobe.com/is/image/content/dam/royal/content/destinations/croatia/dubrovnik-cityscape-walls-and-coastline.jpg?$750x667$"
-                                 class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a href="{% url 'guide-item' item.id %}">{{ item.title }}</a>
-                                </h5>
-                                <p class="card-text">{{ item.description }}</p>
-                                <p class="card-text"><small
-                                        class="text-muted">{{ item.city }}, {{ item.country }} (${{ item.price }})</small></p>
-                            </div>
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <form action="{% url 'tours' %}" method="post" class="form">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                    {% endbuttons %}
+                </form>
+            </div>
+            <div class="col-md-10">
+                {% for item in items %}
+                    <div class="col-md-4">
+                        <a href="{% url 'tour' item.id %}">
+                            {% include 'guide-tour-card.html' with item=item %}
+                        </a>
                     </div>
-                </div>
-            {% endfor %}
+
+                    {#                    <div class="card mb-3" style="max-width: 540px;">#}
+                    {#                        <div class="row no-gutters">#}
+                    {#                            <div class="col-md-4">#}
+                    {#                                <img src="https://rccl-h.assetsadobe.com/is/image/content/dam/royal/content/destinations/croatia/dubrovnik-cityscape-walls-and-coastline.jpg?$750x667$"#}
+                    {#                                     class="card-img" alt="...">#}
+                    {#                            </div>#}
+                    {#                            <div class="col-md-8">#}
+                    {#                                <div class="card-body">#}
+                    {#                                    <h5 class="card-title">#}
+                    {#                                        {{ item.title }}</a>#}
+                    {#                                    </h5>#}
+                    {#                                    <p class="card-text">{{ item.description }}</p>#}
+                    {#                                    <p class="card-text"><small#}
+                    {#                                            class="text-muted">#}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

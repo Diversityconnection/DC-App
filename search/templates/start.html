@@ -55,28 +55,12 @@
     </div>
 
     <div class="container">
-        <h2>Popular tour</h2>
+        <h2>Popular tours</h2>
         <p class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
-        {% for j in '12'|make_list %}
-            <div class="row">
-                {% for i in '1234'|make_list %}
-                    <div class="col-md-3">
-                        <div class="card card-tour">
-                            <div class="user">
-                                <img src="/static/avatar-small.png" alt="">&nbsp;&nbsp;&nbsp;Ann Simons
-                            </div>
-                            <img src="/static/tour-cover.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="lead">destinations<span class="duration">4 hours</span></p>
-                                <h5 class="card-title">A Guide to Rocky Montain Vacations</h5>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text</p>
-                                <p class="price"><b>45$</b> per person</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+        {% for guide_tour in popular_guide_tours %}
+            <div class="col-md-3">
+                {% include "guide-tour-card.html" with item=guide_tour %}
             </div>
         {% endfor %}
     </div>
