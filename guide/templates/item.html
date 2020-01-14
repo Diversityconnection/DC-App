@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}{{ item.title }}{% endblock %}
+{% block content %}
+    <img src="https://rccl-h.assetsadobe.com/is/image/content/dam/royal/content/destinations/croatia/dubrovnik-cityscape-walls-and-coastline.jpg?$750x667$"
+         class="card-img" alt="...">
+    <h1>{{ item.title }}</h1>
+    <p>${{ item.price }}</p>
+    <p>{{ item.city }}, {{ item.country }}</p>
+    <p>{{ item.description }}</p>
+{% endblock %}

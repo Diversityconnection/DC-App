@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}Guide{% endblock %}
+{% block content %}
+    <form action="{% url 'search' %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <a href="#" class="btn btn-danger">Delete</a>
+            <button type="submit" class="btn btn-success">Upload</button>
+        {% endbuttons %}
+    </form>
+{% endblock %}

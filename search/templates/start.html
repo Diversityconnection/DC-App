@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}Start page{% endblock %}
+{% block content %}
+    <div id="jumbotron-search" class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Find impressions to your taste</h1>
+
+            <p class="lead">Impressions are copyright events that show experience and<br> knowledge from a completely
+                new perspective.</p>
+
+            <br>
+
+            <form>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <label class="sr-only" for="search-where">Where</label>
+                        <input type="text" class="form-control" id="search-where" placeholder="Where?">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="sr-only" for="search-when">Where</label>
+                        <input type="text" class="form-control" id="search-when" placeholder="When?">
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </form>
+
+            <br><br>
+
+            <button class="btn btn-default">Show 184 impressions</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for i in "123456"|make_list %}
+                <div class="col-md-2 search-tag">
+                    <img src="/static/tag-food.png" class="card-img-top" alt="...">
+                    <h5 class="tag-title">Food and drink</h5>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Popular tour</h2>
+        <p class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+        {% for j in '12'|make_list %}
+            <div class="row">
+                {% for i in '1234'|make_list %}
+                    <div class="col-md-3">
+                        <div class="card card-tour">
+                            <div class="user">
+                                <img src="/static/avatar-small.png" alt="">&nbsp;&nbsp;&nbsp;Ann Simons
+                            </div>
+                            <img src="/static/tour-cover.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="lead">destinations<span class="duration">4 hours</span></p>
+                                <h5 class="card-title">A Guide to Rocky Montain Vacations</h5>
+                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text</p>
+                                <p class="price"><b>45$</b> per person</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+        <h2>Popular guides</h2>
+        <p class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+        <div class="row">
+            {% for i in '1234'|make_list %}
+                <div class="col-md-3">
+                    <div class="card card-popular-guide">
+                        <img class="avatar" src="/static/avatar-medium.png" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Anna Smirnova</h5>
+                            <p class="city">London</p>
+                            <table>
+                                <tr>
+                                    <td class="title">Routes:</td>
+                                    <td class="text">6 tours</td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Languages:</td>
+                                    <td class="text">English, Russian</td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Photos:</td>
+                                    <td class="text">20 photos from tours</td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Reviews:</td>
+                                    <td class="text">20 reviews</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

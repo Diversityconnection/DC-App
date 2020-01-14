@@ -1,0 +1,86 @@
+{% load bootstrap4 %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Raleway|Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'search' %}">Travelling</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" id="navbar-location">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <span class="text-muted">Location:</span>&nbsp;&nbsp;&nbsp;&nbsp;Moscow&nbsp;&nbsp;
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                {% url 'tour-search' as tours_url %}
+                {% url 'guide-search' as guides_url %}
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == tours_url %}active{% endif %}" href="{{ tours_url }}">
+                        Tours
+                    </a>
+                </li>
+                <li class="nav-item {% if request.path == guides_url %}active{% endif %}">
+                    <a class="nav-link" href="{{ guides_url }}">
+                        Guides
+                    </a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ user.email }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            {% if request.user.client.role == 'seller' %}
+                                <a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a>
+                            {% endif %}
+                            <a class="dropdown-item disabled" href="#">Profile</a>
+                            <a class="dropdown-item disabled" href="#">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'registration' %}">Create account</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.disabled-menu-item').tooltip();
+</script>
+</body>
+</html>

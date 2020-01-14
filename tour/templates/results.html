@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Tours{% endblock %}
+{% block content %}
+    {% if items|length == 0 %}
+    No results found. Please try to enter other criterias.
+    {% else %}
+        {% for item in items %}
+        - tour<br/>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

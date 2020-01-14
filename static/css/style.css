@@ -1,0 +1,202 @@
+body {
+    font-family: "Fira Sans", sans-serif;
+}
+
+h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.25px;
+    color: #000000;
+    margin-top: 60px;
+}
+
+p.subtitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.25px;
+    color: rgba(0, 0, 0, 0.54);
+    margin-bottom: 40px;
+}
+
+nav.navbar {
+    height: 88px;
+}
+
+nav.navbar li.nav-item a.nav-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.25px;
+    color: #000000;
+}
+
+a.navbar-brand {
+    font-family: "Raleway", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: -0.25px;
+}
+
+#jumbotron-search {
+    height: 550px;
+    background-image: url("/static/header-1.png");
+    background-position: center;
+    text-align: center;
+}
+
+#jumbotron-search h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.16);
+}
+
+#jumbotron-search p.lead {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.16);
+}
+
+#jumbotron-search form input {
+    height: 56px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #999BA5;
+}
+
+#jumbotron-search button.btn {
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #FF764B;
+    border-radius: 12px;
+    height: 56px;
+    width: 271px;
+}
+
+h5.tag-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+    margin-top: 8px;
+}
+
+div.card-tour {
+    border-width: 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+div.card-tour div.user {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+div.card-tour p.lead {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+div.card-tour span.duration {
+    float: right;
+    font-weight: bold;
+    color: #000000;
+    text-transform: none;
+}
+
+div.card-tour h5 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+div.card-tour p.card-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+}
+
+div.card-tour p.price {
+    font-size: 12px;
+    line-height: 24px;
+    color: #000000;
+}
+
+div.card-popular-guide {
+    text-align: center;
+    border: 1px solid #EEEFF0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+div.card-popular-guide img.avatar {
+    width: 160px;
+    height: 160px;
+    align-self: center;
+    margin: 24px 0 12px 0;
+}
+
+div.card-popular-guide h5 {
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #000000;
+}
+
+div.card-popular-guide p.city {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.25px;
+    color: #000000;
+}
+
+div.card-popular-guide table td.title {
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.25px;
+    color: rgba(0, 0, 0, 0.32);
+}
+
+div.card-popular-guide table td.text {
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height, or 100% */
+    letter-spacing: -0.25px;
+    color: #000000;
+}
